@@ -77,6 +77,20 @@ export default function DemoPage() {
         )}
       </section>
 
+      <section style={{ padding: "50px 24px", maxWidth: 520, margin: "0 auto" }}>
+        <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 22, fontWeight: 400, marginBottom: 16, textAlign: "center" }}>In your walkthrough, we{"'"}ll show you how ConvoRally can help with:</h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {["Clearer communication tied to the work", "Tracked approvals and changes", "Proof tied to what was completed", "Easier project history", "Workflows that are easier to trust later"].map((item, i) => (
+            <div key={i} style={{ display: "flex", gap: 10, alignItems: "center", fontSize: 15, color: mid }}>
+              <span style={{ color: "#0EA5B7", fontSize: 16 }}>{"✓"}</span>{item}
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: 28, padding: "16px 20px", background: "#FFFFFF", border: "1px solid #E2DFDA", borderRadius: 10, textAlign: "center" }}>
+          <p style={{ fontSize: 13, color: "#A8A29E", lineHeight: 1.6 }}>The first 100 qualifying account holders will receive Founding 100 status, with access to a private member community, direct feedback channels, and early member perks.</p>
+        </div>
+      </section>
+
       <footer style={{ padding: "40px 24px", textAlign: "center" }}>
         <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 18, fontStyle: "italic", color: ink, marginBottom: 16 }}>If it{"'"}s not in ConvoRally, it didn{"'"}t happen.</p>
         <a href="/" style={{ fontSize: 13, color: soft, textDecoration: "none" }}>{"\u2190"} Back to ConvoRally.com</a>
