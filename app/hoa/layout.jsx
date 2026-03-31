@@ -1,5 +1,2 @@
-export const metadata = {
-  title: "ConvoRally for HOA Management",
-  description: "Board decisions, vendor accountability, and homeowner communications with transparent audit trails. Give your community a record it can trust.",
-};
+export const metadata = { title: "ConvoRally for HOA Management", description: "Document board decisions, vendor work, approvals, and follow-through in one place." };
 export default function Layout({ children }) { return children; }

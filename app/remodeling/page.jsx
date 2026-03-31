@@ -1,325 +1,128 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 
-const LOGO_SRC = "data:image/jpeg;base64,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";
+const LOGO_SRC = "/cr-logo.png";
 
-const cream = "#FBF8F3";
-const ink = "#1C1917";
-const mid = "#6B6560";
-const soft = "#A8A29E";
-const warmWhite = "#FFFFFF";
-const warmBorder = "#E7E0D8";
-const red = "#D93025";
-const teal = "#0EA5B7";
-const gold = "#D97706";
-const navy = "#1E293B";
-const gradient = "linear-gradient(135deg, #D93025, #0EA5B7, #D97706)";
+const bg = "#F3F2EF"; const cardBg = "#FFFFFF"; const ink = "#1C1917"; const mid = "#6B6560";
+const soft = "#A8A29E"; const border = "#E2DFDA";
+const red = "#D93025"; const teal = "#0EA5B7"; const gold = "#D97706"; const navy = "#1E293B";
 
 function useInView(threshold = 0.12) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setInView(true); obs.unobserve(el); } },
-      { threshold }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [threshold]);
+  useEffect(() => { const el = ref.current; if (!el) return; const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setInView(true); obs.unobserve(el); } }, { threshold }); obs.observe(el); return () => obs.disconnect(); }, [threshold]);
   return [ref, inView];
 }
-
 function FadeIn({ children, delay = 0 }) {
   const [ref, inView] = useInView();
-  return (
-    <div ref={ref} style={{
-      opacity: inView ? 1 : 0,
-      transform: inView ? "translateY(0)" : "translateY(20px)",
-      transition: `opacity 0.6s cubic-bezier(.22,1,.36,1) ${delay}s, transform 0.6s cubic-bezier(.22,1,.36,1) ${delay}s`,
-    }}>{children}</div>
-  );
+  return (<div ref={ref} style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(20px)", transition: `opacity 0.6s cubic-bezier(.22,1,.36,1) ${delay}s, transform 0.6s cubic-bezier(.22,1,.36,1) ${delay}s` }}>{children}</div>);
 }
 
 export default function RemodelingPage() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
     const link = document.createElement("link");
     link.href = "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
+    link.rel = "stylesheet"; document.head.appendChild(link);
     const fn = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
-
   const go = () => { if (email.includes("@")) setSubmitted(true); };
 
   return (
-    <div style={{ background: cream, color: ink, minHeight: "100vh", fontFamily: "'DM Sans', sans-serif", overflowX: "hidden" }}>
-
-      {/* NAV with breadcrumb */}
-      <nav style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "10px 40px",
-        display: "flex", justifyContent: "space-between", alignItems: "center",
-        background: scrollY > 50 ? "rgba(251,248,243,0.95)" : "transparent",
-        backdropFilter: scrollY > 50 ? "blur(20px)" : "none",
-        borderBottom: scrollY > 50 ? `1px solid ${warmBorder}` : "1px solid transparent",
-        transition: "all 0.3s",
-      }}>
+    <div style={{ background: bg, color: ink, minHeight: "100vh", fontFamily: "'DM Sans', sans-serif", overflowX: "hidden" }}>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "10px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", background: scrollY > 50 ? "rgba(243,242,239,0.95)" : "transparent", backdropFilter: scrollY > 50 ? "blur(20px)" : "none", borderBottom: scrollY > 50 ? `1px solid ${border}` : "1px solid transparent", transition: "all 0.3s" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-            <img src={LOGO_SRC} alt="ConvoRally" style={{ width: 34, height: 34, objectFit: "contain" }} />
-            <span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 20, color: ink }}>ConvoRally</span>
-          </a>
-          <span style={{ color: warmBorder, margin: "0 4px", fontSize: 18 }}>/</span>
-          <span style={{ fontSize: 14, color: mid, fontWeight: 500 }}>Construction & Custom Trades</span>
+          <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}><img src={LOGO_SRC} alt="ConvoRally" style={{ width: 34, height: 34, objectFit: "contain" }} /><span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 20, color: ink }}>ConvoRally</span></a>
+          <span style={{ color: border, margin: "0 4px", fontSize: 18 }}>/</span>
+          <span style={{ fontSize: 14, color: mid, fontWeight: 500 }}>Construction & Trades</span>
         </div>
         <a href="#cta" style={{ background: navy, color: "#fff", padding: "9px 22px", borderRadius: 8, fontSize: 14, fontWeight: 600, textDecoration: "none" }}>Get Early Access</a>
       </nav>
 
-      {/* ============ HERO ============ */}
-      <section style={{
-        minHeight: "92vh", display: "flex", flexDirection: "column",
-        justifyContent: "center", alignItems: "center", textAlign: "center",
-        padding: "130px 24px 80px",
-      }}>
-        <FadeIn>
-          <p style={{ fontSize: 14, fontWeight: 600, color: red, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20 }}>
-            For Remodeling, Construction & Custom Trades
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.08}>
-          <h1 style={{
-            fontFamily: "'Instrument Serif', Georgia, serif",
-            fontSize: "clamp(38px, 5.5vw, 68px)", fontWeight: 400,
-            lineHeight: 1.08, maxWidth: 700, marginBottom: 24, letterSpacing: "-0.02em",
-          }}>
-            {'"'}I thought that was{" "}
-            <span style={{ fontStyle: "italic", color: red }}>included.{'"'}</span>
-          </h1>
-        </FadeIn>
-
-        <FadeIn delay={0.18}>
-          <p style={{ fontSize: 19, color: mid, maxWidth: 520, lineHeight: 1.7, marginBottom: 36 }}>
-            That sentence has cost contractors, woodworkers, and homeowners millions.
-            ConvoRally makes sure every scope item, material spec, change order, and payment
-            milestone is written, confirmed, and time-stamped — so nobody
-            pays for assumptions.
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.28}>
-          <a href="#cta" style={{
-            background: navy, color: "#fff", padding: "15px 36px", borderRadius: 10,
-            fontSize: 16, fontWeight: 600, textDecoration: "none",
-            boxShadow: "0 4px 20px rgba(30,41,59,0.2)",
-          }}>Join the Contractor Channel</a>
-        </FadeIn>
+      <section style={{ minHeight: "92vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "130px 24px 80px" }}>
+        <FadeIn><p style={{ fontSize: 14, fontWeight: 600, color: red, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 20 }}>For Remodeling, Construction & Custom Trades</p></FadeIn>
+        <FadeIn delay={0.08}><h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(38px, 5.5vw, 68px)", fontWeight: 400, lineHeight: 1.08, maxWidth: 700, marginBottom: 24, letterSpacing: "-0.02em" }}>{'"'}I thought that was <span style={{ fontStyle: "italic", color: red }}>included.{'"'}</span></h1></FadeIn>
+        <FadeIn delay={0.18}><p style={{ fontSize: 19, color: mid, maxWidth: 540, lineHeight: 1.7, marginBottom: 36 }}>That sentence has cost contractors, woodworkers, trades, and homeowners a lot of money. ConvoRally makes sure scope, material selections, changes, and payments are written down, confirmed, and time-stamped — so nobody pays for assumptions.</p></FadeIn>
+        <FadeIn delay={0.28}><a href="#cta" style={{ background: navy, color: "#fff", padding: "15px 36px", borderRadius: 10, fontSize: 16, fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 20px rgba(30,41,59,0.15)" }}>Get Early Access</a></FadeIn>
       </section>
 
-      {/* ============ STATS — Navy block ============ */}
       <section style={{ background: navy, color: "#fff", padding: "70px 24px" }}>
         <div style={{ maxWidth: 880, margin: "0 auto" }}>
-          <FadeIn>
-            <div style={{ textAlign: "center", marginBottom: 48 }}>
-              <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 400, lineHeight: 1.25 }}>
-                Good contractors lose money{" "}
-                <span style={{ fontStyle: "italic", color: gold }}>to bad documentation.</span>
-              </h2>
-            </div>
-          </FadeIn>
+          <FadeIn><div style={{ textAlign: "center", marginBottom: 48 }}><h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 400, lineHeight: 1.25 }}>Good contractors lose money <span style={{ fontStyle: "italic", color: gold }}>to bad documentation.</span></h2></div></FadeIn>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 24 }}>
             {[
-              { stat: "27%", title: "Scope Creep", desc: "Average cost overrun on remodeling projects from undocumented scope changes.", color: "#FCA5A5" },
-              { stat: "3 in 5", title: "Change Order Disputes", desc: "Projects with at least one dispute over a verbal change order.", color: "#7DD3FC" },
-              { stat: "67 days", title: "Payment Delays", desc: "Average time to resolve a payment dispute when agreements aren't time-stamped.", color: "#FCD34D" },
+              { title: "Scope creep", desc: "Scope creep can quietly destroy margins when changes aren't documented as they happen.", color: "#FCA5A5" },
+              { title: "Verbal change orders", desc: "Verbal change orders create expensive fights when the final invoice doesn't match expectations.", color: "#7DD3FC" },
+              { title: "Payment delays", desc: "Payment delays get worse when nobody can prove what changed, what was approved, or what was completed.", color: "#FCD34D" },
             ].map((item, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div style={{
-                  background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: 14, padding: "32px 24px", textAlign: "center",
-                }}>
-                  <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 48, color: item.color, fontWeight: 400, marginBottom: 6, lineHeight: 1 }}>{item.stat}</div>
-                  <p style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>{item.title}</p>
-                  <p style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>{item.desc}</p>
-                </div>
-              </FadeIn>
+              <FadeIn key={i} delay={i * 0.1}><div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 14, padding: "28px 22px" }}><p style={{ fontSize: 15, fontWeight: 600, marginBottom: 8, color: item.color }}>{item.title}</p><p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.6 }}>{item.desc}</p></div></FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ============ HOW IT WORKS — Remodeling specific ============ */}
       <section style={{ padding: "90px 24px", maxWidth: 800, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <p style={{ fontSize: 13, fontWeight: 600, color: teal, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 14 }}>Built for the Jobsite</p>
-            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 40px)", fontWeight: 400, lineHeight: 1.2 }}>
-              From estimate to final payment —{" "}
-              <span style={{ fontStyle: "italic", color: teal }}>one record of truth.</span>
-            </h2>
-          </div>
-        </FadeIn>
-
+        <FadeIn><div style={{ textAlign: "center", marginBottom: 56 }}><p style={{ fontSize: 13, fontWeight: 600, color: teal, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 14 }}>Built for the Jobsite</p><h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 40px)", fontWeight: 400, lineHeight: 1.2 }}>From estimate to final payment — <span style={{ fontStyle: "italic", color: teal }}>one clear record.</span></h2></div></FadeIn>
         {[
-          { icon: "\u{1F4DD}", title: "Estimates that lock in", desc: "Send an estimate through ConvoRally. When the client confirms, it becomes a time-stamped agreement — not a PDF lost in an email thread. Scope, materials, and specs are part of the record.", color: teal },
-          { icon: "\u{1F3A8}", title: "Material and finish approvals", desc: "Client approved walnut, now they want white oak? Every material change, finish selection, and spec revision is confirmed by both sides before you order or cut.", color: gold },
-          { icon: "\u{1F504}", title: "Change orders with receipts", desc: "Scope changes happen. When they do, both parties confirm the change, the new price, and the timeline impact — before work continues.", color: red },
-          { icon: "\u{1F4F8}", title: "Photo-verified milestones", desc: "Rough-in complete? Cabinet install done? Document it with photos, get sign-off, and move to the next phase. No more \"I never approved that\" moments.", color: navy },
-          { icon: "\u{1F4B3}", title: "Milestone-based payments", desc: "Payment is tied to verified completion. When the work is proven done, funds release. Both sides are protected.", color: "#16a34a" },
-          { icon: "\u{1F4E2}", title: "Subs and trades in the loop", desc: "Subcontractors and specialty trades join the project channel with scoped visibility. They see their tasks and timelines — nothing more, nothing less.", color: mid },
+          { icon: "\u{1F4CB}", title: "Estimates that lock in", desc: "Send an estimate through ConvoRally. When the client confirms, it becomes part of the live project record — not a PDF lost in an email thread.", color: teal },
+          { icon: "\u{1F3A8}", title: "Material and finish approvals", desc: "Walnut first, white oak later? Every material change, finish selection, and spec revision gets confirmed before you order, cut, or install.", color: red },
+          { icon: "\u{1F504}", title: "Change orders with receipts", desc: "Scope changes happen. When they do, both sides confirm the change, the new price, and the timing before work continues.", color: gold },
+          { icon: "\u{1F4F8}", title: "Photo-verified milestones", desc: "Rough-in complete? Cabinets installed? Document it with photos, get sign-off, and move to the next step.", color: navy },
+          { icon: "\u{1F4B3}", title: "Milestone-based payments", desc: "Payment is tied to verified completion. Everyone can see what was agreed to, what was done, and what is owed.", color: "#16a34a" },
+          { icon: "\u{1F465}", title: "Subs and trades in the loop", desc: "Subcontractors and specialty trades can see their scope, their tasks, and their timing without having to chase down the whole story.", color: mid },
         ].map((item, i) => (
-          <FadeIn key={i} delay={i * 0.08}>
-            <div style={{
-              display: "flex", gap: 20, alignItems: "flex-start", padding: "26px 0",
-              borderBottom: i < 5 ? `1px solid ${warmBorder}` : "none",
-            }}>
-              <span style={{ fontSize: 26, minWidth: 32 }}>{item.icon}</span>
-              <div>
-                <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 21, fontWeight: 400, marginBottom: 5, color: ink }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: mid, lineHeight: 1.65, maxWidth: 560 }}>{item.desc}</p>
-              </div>
-            </div>
-          </FadeIn>
+          <FadeIn key={i} delay={i * 0.08}><div style={{ display: "flex", gap: 20, alignItems: "flex-start", padding: "26px 0", borderBottom: i < 5 ? `1px solid ${border}` : "none" }}><span style={{ fontSize: 26, minWidth: 32 }}>{item.icon}</span><div><h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 21, fontWeight: 400, marginBottom: 5, color: ink }}>{item.title}</h3><p style={{ fontSize: 14, color: mid, lineHeight: 1.65, maxWidth: 560 }}>{item.desc}</p></div></div></FadeIn>
         ))}
       </section>
 
-      {/* ============ VOICES — Warm block ============ */}
-      <section style={{ padding: "80px 24px", background: "#F5F0E8" }}>
+      <section style={{ padding: "80px 24px", background: "#ECEAE5" }}>
         <div style={{ maxWidth: 680, margin: "0 auto" }}>
-          <FadeIn>
-            <div style={{ textAlign: "center", marginBottom: 44 }}>
-              <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 400, lineHeight: 1.25 }}>
-                Everyone remembers it differently.{" "}
-                <span style={{ fontStyle: "italic", color: gold }}>Until it{"'"}s written down.</span>
-              </h2>
-            </div>
-          </FadeIn>
-
+          <FadeIn><div style={{ textAlign: "center", marginBottom: 44 }}><h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 400, lineHeight: 1.25 }}>Everyone remembers it differently. <span style={{ fontStyle: "italic", color: red }}>Until it{"'"}s written down.</span></h2></div></FadeIn>
           {[
-            { quote: "We lost $14k on a kitchen remodel because the homeowner swore we agreed to include the backsplash. We didn't. But we couldn't prove it.", role: "Remodeling contractor, 18 years" },
-            { quote: "The client approved walnut for the built-ins. Three weeks later, after I'd already milled the lumber, they said they wanted white oak. No record of the original approval anywhere.", role: "Custom woodworker & cabinet maker" },
-            { quote: "My sub did the work, but the GC said it wasn't approved. Three months to get paid. I almost went under.", role: "Electrical subcontractor" },
-            { quote: "I just want to know what I'm paying for and when it'll be done. Every contractor tells me something different.", role: "Homeowner, first renovation" },
+            { quote: "We agreed on white oak for the shelving. The client says they said walnut. I ate the cost.", role: "Custom woodworker, 14 years" },
+            { quote: "The homeowner asked for an extra outlet. I said $400 more. They agreed verbally. When the invoice came, they said they never approved it.", role: "General contractor" },
+            { quote: "The final bill was $8,000 more than the estimate. He says the changes were approved. I don't remember agreeing to half of them.", role: "Homeowner" },
           ].map((item, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <div style={{
-                position: "relative", paddingLeft: 28, marginBottom: 28,
-              }}>
-                <div style={{ position: "absolute", left: 0, top: 0, width: 4, height: "100%", borderRadius: 2, background: i === 0 ? red : i === 1 ? gold : i === 2 ? teal : navy }} />
-                <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 19, fontStyle: "italic", color: ink, lineHeight: 1.55, marginBottom: 8 }}>
-                  {'"'}{item.quote}{'"'}
-                </p>
-                <p style={{ fontSize: 13, color: soft }}>— {item.role}</p>
-              </div>
-            </FadeIn>
+            <FadeIn key={i} delay={i * 0.1}><div style={{ position: "relative", paddingLeft: 28, marginBottom: 28 }}><div style={{ position: "absolute", left: 0, top: 0, width: 4, height: "100%", borderRadius: 2, background: i === 0 ? red : i === 1 ? gold : teal }} /><p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 19, fontStyle: "italic", color: ink, lineHeight: 1.55, marginBottom: 8 }}>{'"'}{item.quote}{'"'}</p><p style={{ fontSize: 13, color: soft }}>— {item.role}</p></div></FadeIn>
           ))}
         </div>
       </section>
 
-      {/* ============ WHO IT'S FOR ============ */}
-      <section style={{ padding: "80px 24px", maxWidth: 880, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 44 }}>
-            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 400, lineHeight: 1.25 }}>
-              Built for everyone on the project.
-            </h2>
-          </div>
-        </FadeIn>
+      <section style={{ padding: "80px 24px", maxWidth: 920, margin: "0 auto" }}>
+        <FadeIn><div style={{ textAlign: "center", marginBottom: 44 }}><h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 400, lineHeight: 1.25 }}>Built for every side of the project.</h2></div></FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: 16 }}>
           {[
-            { role: "General Contractors", desc: "Protect your margins with documented scope, verified milestones, and dispute-proof records.", color: red },
+            { role: "General Contractors", desc: "Protect your margins with documented scope, verified milestones, and a searchable record.", color: red },
             { role: "Custom Woodworkers", desc: "Lock in material specs, finish selections, and design approvals before you cut the first board.", color: gold },
-            { role: "Subcontractors", desc: "See your scope, confirm your tasks, and get paid when the work is proven done.", color: teal },
-            { role: "Homeowners", desc: "Know exactly what you're paying for, when it'll be done, and what changed along the way.", color: navy },
-            { role: "Designers & Architects", desc: "Track spec changes, material approvals, and client sign-offs in one shared record.", color: mid },
+            { role: "Subcontractors", desc: "See your scope clearly, confirm your tasks, and get paid when the work is verified.", color: teal },
+            { role: "Homeowners", desc: "Know what you're paying for, what changed, and what happens next.", color: navy },
+            { role: "Designers & Architects", desc: "Track spec changes, approvals, and sign-offs in one shared record.", color: mid },
           ].map((item, i) => (
-            <FadeIn key={i} delay={i * 0.08}>
-              <div style={{
-                background: warmWhite, border: `1px solid ${warmBorder}`, borderRadius: 14,
-                padding: "28px 22px", boxShadow: "0 1px 4px rgba(0,0,0,0.04)",
-              }}>
-                <div style={{ width: 36, height: 4, borderRadius: 2, background: item.color, marginBottom: 16 }} />
-                <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 19, fontWeight: 400, marginBottom: 6, color: ink }}>{item.role}</h3>
-                <p style={{ fontSize: 14, color: mid, lineHeight: 1.6 }}>{item.desc}</p>
-              </div>
-            </FadeIn>
+            <FadeIn key={i} delay={i * 0.06}><div style={{ background: cardBg, border: `1px solid ${border}`, borderRadius: 14, padding: "24px 20px", boxShadow: "0 1px 4px rgba(0,0,0,0.04)" }}><div style={{ width: 32, height: 4, borderRadius: 2, background: item.color, marginBottom: 14 }} /><h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 18, fontWeight: 400, marginBottom: 5, color: ink }}>{item.role}</h3><p style={{ fontSize: 13, color: mid, lineHeight: 1.6 }}>{item.desc}</p></div></FadeIn>
           ))}
         </div>
       </section>
 
-      {/* ============ CTA — Navy block ============ */}
       <section id="cta" style={{ background: navy, color: "#fff", padding: "90px 24px", textAlign: "center" }}>
-        <FadeIn>
-          <img src={LOGO_SRC} alt="" style={{ width: 48, height: 48, objectFit: "contain", marginBottom: 18, opacity: 0.9 }} />
-        </FadeIn>
-        <FadeIn>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 400, lineHeight: 1.2, marginBottom: 14 }}>
-            Stop losing money to memory gaps.
-          </h2>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.7)", maxWidth: 460, margin: "0 auto 10px", lineHeight: 1.6 }}>
-            Join the builders channel — a live ConvoRally project where contractors, woodworkers, and trades shape the tool together.
-          </p>
-          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", maxWidth: 400, margin: "0 auto 32px" }}>
-            Show up, share a real pain point, and help us build the truth ledger your trade needs.
-          </p>
-        </FadeIn>
+        <FadeIn><img src={LOGO_SRC} alt="" style={{ width: 48, height: 48, objectFit: "contain", marginBottom: 18, opacity: 0.9 }} /></FadeIn>
+        <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 400, lineHeight: 1.2, marginBottom: 14 }}>Stop losing money to memory gaps.</h2></FadeIn>
+        <FadeIn delay={0.1}><p style={{ fontSize: 17, color: "rgba(255,255,255,0.7)", maxWidth: 460, margin: "0 auto 10px", lineHeight: 1.6 }}>Join early access and help us shape ConvoRally for contractors, woodworkers, and trades.</p><p style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", maxWidth: 400, margin: "0 auto 32px" }}>Share a real pain point from the field and help us build the record your trade actually needs.</p></FadeIn>
         <FadeIn delay={0.2}>
           {submitted ? (
-            <div style={{
-              display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 8,
-              background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)",
-              borderRadius: 14, padding: "20px 28px",
-            }}>
-              <span style={{ fontSize: 26 }}>{"\u2713"}</span>
-              <p style={{ fontSize: 16, fontWeight: 600 }}>You{"'"}re in.</p>
-              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.6)", maxWidth: 300 }}>Check your email for your invite to the builders channel.</p>
-            </div>
+            <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 14, padding: "20px 28px" }}><span style={{ fontSize: 26 }}>{"\u2713"}</span><p style={{ fontSize: 16, fontWeight: 600 }}>You{"'"}re in.</p><p style={{ fontSize: 14, color: "rgba(255,255,255,0.6)", maxWidth: 300 }}>Check your email for your early access invite.</p></div>
           ) : (
-            <div style={{ maxWidth: 440, margin: "0 auto" }}>
-              <div style={{
-                display: "flex", gap: 8, background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.15)", borderRadius: 10, padding: 5,
-              }}>
-                <input type="email" placeholder="you@company.com" value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && go()}
-                  style={{ flex: 1, background: "transparent", border: "none", outline: "none", color: "#fff", fontSize: 15, padding: "10px 12px", fontFamily: "'DM Sans', sans-serif" }} />
-                <button onClick={go} style={{
-                  background: "#fff", color: navy, border: "none", borderRadius: 7,
-                  padding: "11px 22px", fontSize: 14, fontWeight: 600, cursor: "pointer",
-                  fontFamily: "'DM Sans', sans-serif", whiteSpace: "nowrap",
-                }}>Join the Channel</button>
-              </div>
-            </div>
+            <div style={{ maxWidth: 440, margin: "0 auto" }}><div style={{ display: "flex", gap: 8, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 10, padding: 5 }}><input type="email" placeholder="you@company.com" value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} style={{ flex: 1, background: "transparent", border: "none", outline: "none", color: "#fff", fontSize: 15, padding: "10px 12px", fontFamily: "'DM Sans', sans-serif" }} /><button onClick={go} style={{ background: "#fff", color: navy, border: "none", borderRadius: 7, padding: "11px 22px", fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans', sans-serif", whiteSpace: "nowrap" }}>Get Early Access</button></div></div>
           )}
         </FadeIn>
       </section>
 
-      {/* FOOTER */}
       <footer style={{ padding: "52px 24px 36px", maxWidth: 800, margin: "0 auto" }}>
-        <FadeIn>
-          <p style={{
-            fontFamily: "'Instrument Serif', Georgia, serif",
-            fontSize: "clamp(18px, 2.8vw, 26px)", fontStyle: "italic", textAlign: "center",
-            marginBottom: 28, background: gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-          }}>If it{"'"}s not in ConvoRally, it didn{"'"}t happen.</p>
-        </FadeIn>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12, borderTop: `1px solid ${warmBorder}`, paddingTop: 20 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <img src={LOGO_SRC} alt="" style={{ width: 22, height: 22, objectFit: "contain" }} />
-            <span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 15, color: soft }}>ConvoRally</span>
-          </div>
-          <a href="/" style={{ fontSize: 13, color: soft, textDecoration: "none" }}>{"\u2190"} Back to main site</a>
-        </div>
+        <FadeIn><p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(18px, 2.8vw, 26px)", fontStyle: "italic", textAlign: "center", color: ink, marginBottom: 28 }}>If it{"'"}s not in ConvoRally, it didn{"'"}t happen.</p></FadeIn>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12, borderTop: `1px solid ${border}`, paddingTop: 20 }}><div style={{ display: "flex", alignItems: "center", gap: 8 }}><img src={LOGO_SRC} alt="" style={{ width: 22, height: 22, objectFit: "contain" }} /><span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 15, color: soft }}>ConvoRally</span></div><a href="/" style={{ fontSize: 13, color: soft, textDecoration: "none" }}>{"\u2190"} Back to main site</a></div>
       </footer>
     </div>
   );

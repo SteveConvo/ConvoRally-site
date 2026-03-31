@@ -1,5 +1,2 @@
-export const metadata = {
-  title: "ConvoRally for Building Forensics & Expert Analysis",
-  description: "Evidence-grade documentation for multi-party investigations. Time-stamped, attributed, and defensible under scrutiny.",
-};
+export const metadata = { title: "ConvoRally for Building Forensics", description: "Preserve evidence, communication, and documentation in a way that stands up under scrutiny." };
 export default function Layout({ children }) { return children; }
