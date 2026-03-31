@@ -107,6 +107,27 @@ export default function RemodelingPage() {
         </div>
       </section>
 
+      {/* REAL STORIES */}
+      <section style={{ padding: "80px 24px", background: cardBg }}>
+        <div style={{ maxWidth: 920, margin: "0 auto" }}>
+          <FadeIn><div style={{ textAlign: "center", marginBottom: 44 }}><p style={{ fontSize: 13, fontWeight: 600, color: gold, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 14 }}>Real Situations</p><h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 400, lineHeight: 1.25 }}>Stories from <span style={{ fontStyle: "italic" }}>the field.</span></h2></div></FadeIn>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+            {[
+              { title: "The right dimensions, right when she needed them.", situation: "A homeowner was at the cabinet hardware store picking out handles and needed exact cabinet dimensions to choose the right length.", helped: "The dimensions were already saved in the project record. She pulled them up on her phone without having to drive back home or call anyone.", outcome: "No wasted trip. No guessing. The info was there when it mattered." },
+              { title: "A faucet change that never made it to the contractor.", situation: "An interior designer and homeowner changed a kitchen faucet by email. The contractor had already drilled the countertop for the original 8-inch spread faucet.", helped: "The contractor pulled up the project channel and showed the original selection was still the approved spec. The designer and homeowner found a replacement that fit the existing holes.", outcome: "No new countertop. No backsplash rework. Thousands saved because the record was clear." },
+              { title: "Wrong cut, quick proof, fast fix.", situation: "Countertop installers cut a cooktop opening to the wrong dimensions and were ready to install the smaller size.", helped: "The contractor pulled up the original specs shared with the sales rep \u2014 in seconds. The record showed exactly what was communicated.", outcome: "Installers recut to the correct size. No new countertop. No project delay. No finger-pointing." },
+            ].map((story, i) => (
+              <FadeIn key={i} delay={i * 0.1}><div style={{ background: bg, border: `1px solid ${border}`, borderRadius: 14, padding: "28px 24px", height: "100%", display: "flex", flexDirection: "column" }}>
+                <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 19, fontWeight: 400, color: ink, marginBottom: 12, lineHeight: 1.3 }}>{story.title}</h3>
+                <p style={{ fontSize: 13, color: mid, lineHeight: 1.6, marginBottom: 10 }}><strong style={{ color: ink, fontWeight: 600 }}>What happened:</strong> {story.situation}</p>
+                <p style={{ fontSize: 13, color: mid, lineHeight: 1.6, marginBottom: 10 }}><strong style={{ color: ink, fontWeight: 600 }}>How ConvoRally helped:</strong> {story.helped}</p>
+                <p style={{ fontSize: 13, color: ink, lineHeight: 1.6, fontWeight: 500, marginTop: "auto" }}>{story.outcome}</p>
+              </div></FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="cta" style={{ background: navy, color: "#fff", padding: "90px 24px", textAlign: "center" }}>
         <FadeIn><img src={LOGO_SRC} alt="" style={{ width: 48, height: 48, objectFit: "contain", marginBottom: 18, opacity: 0.9 }} /></FadeIn>
         <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 400, lineHeight: 1.2, marginBottom: 14 }}>Stop losing money to memory gaps.</h2></FadeIn>

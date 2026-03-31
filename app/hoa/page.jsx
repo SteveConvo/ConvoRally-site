@@ -125,6 +125,21 @@ export default function HOAPage(){
         </div>
       </section>
 
+      {/* REAL STORY */}
+      <section style={{padding:"80px 24px",background:cardBg}}>
+        <div style={{maxWidth:640,margin:"0 auto"}}>
+          <FadeIn><div style={{textAlign:"center",marginBottom:32}}><p style={{fontSize:13,fontWeight:600,color:gold,letterSpacing:"0.12em",textTransform:"uppercase",marginBottom:14}}>Real Situation</p><h2 style={{fontFamily:"'Instrument Serif', Georgia, serif",fontSize:"clamp(24px, 3.5vw, 34px)",fontWeight:400,lineHeight:1.25}}>$11,000 that didn{"'"}t have to be spent.</h2></div></FadeIn>
+          <FadeIn delay={0.1}>
+            <div style={{background:bg,border:`1px solid ${bdr}`,borderRadius:14,padding:"32px 28px"}}>
+              <span style={{display:"inline-block",fontSize:11,fontWeight:600,color:gold,background:`${gold}10`,padding:"3px 10px",borderRadius:20,marginBottom:16}}>HOA Board</span>
+              <p style={{fontSize:15,color:mid,lineHeight:1.7,marginBottom:14}}><strong style={{color:ink,fontWeight:600}}>What happened:</strong> An HOA water pump failed and cost $11,000 to replace. The board later discovered the same pump had already been replaced two or three years earlier — another $11,000. That{"'"}s $22,000 total on the same pump.</p>
+              <p style={{fontSize:15,color:mid,lineHeight:1.7,marginBottom:14}}><strong style={{color:ink,fontWeight:600}}>What went wrong:</strong> The board struggled to find records of the original replacement. When they finally found some documentation, it was incomplete and scattered. Nobody could quickly confirm when the first pump was installed or what the warranty terms were.</p>
+              <p style={{fontSize:15,color:ink,lineHeight:1.7,fontWeight:500}}>With complete, searchable records, the second replacement could have been a warranty claim instead of another $11,000 bill. The board member said this was exactly the kind of problem ConvoRally would have prevented.</p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       <section id="cta" style={{background:navy,color:"#fff",padding:"90px 24px",textAlign:"center"}}>
         <FadeIn><img src={LOGO_SRC} alt="" style={{width:48,height:48,objectFit:"contain",marginBottom:18,opacity:0.9}} /></FadeIn>
         <FadeIn><h2 style={{fontFamily:"'Instrument Serif', Georgia, serif",fontSize:"clamp(26px, 4vw, 42px)",fontWeight:400,lineHeight:1.2,marginBottom:8}}>Give your community a record it can trust.</h2></FadeIn>

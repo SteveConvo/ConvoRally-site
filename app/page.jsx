@@ -88,6 +88,7 @@ export default function ConvoRallyGray() {
             { label: "How It Works", href: "/how-it-works" },
             { label: "Use Cases", href: "#industries" },
             { label: "Why ConvoRally", href: "/why" },
+            { label: "Community", href: "/community" },
           ].map((t) => (
             <a key={t.label} href={t.href} style={{ color: mid, textDecoration: "none", fontSize: 14, fontWeight: 500 }}>{t.label}</a>
           ))}
@@ -217,6 +218,37 @@ export default function ConvoRallyGray() {
         </div>
       </section>
 
+      {/* REAL STORIES */}
+      <section style={{ padding: "80px 24px", background: cardBg }}>
+        <div style={{ maxWidth: 920, margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ textAlign: "center", marginBottom: 44 }}>
+              <p style={{ fontSize: 13, fontWeight: 600, color: gold, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 14 }}>Real Situations</p>
+              <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 400, lineHeight: 1.25 }}>
+                ConvoRally in <span style={{ fontStyle: "italic" }}>the real world.</span>
+              </h2>
+            </div>
+          </FadeIn>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
+            {[
+              { tag: "Contractor", tagColor: red, title: "A faucet change that never made it to the contractor.", situation: "An interior designer and homeowner changed a kitchen faucet by email. The contractor had already drilled the countertop for the original 8-inch spread faucet.", helped: "The contractor pulled up the project channel and showed the original selection was still the approved spec. The designer and homeowner found a replacement that fit the existing holes.", outcome: "No new countertop. No backsplash rework. Thousands saved because the record was clear." },
+              { tag: "Contractor", tagColor: red, title: "Wrong cut, quick proof, fast fix.", situation: "Countertop installers cut a cooktop opening to the wrong dimensions and were ready to install the smaller size.", helped: "The contractor pulled up the original specs shared with the sales rep — in seconds. The record showed exactly what was communicated.", outcome: "Installers recut to the correct size. No new countertop. No project delay. No finger-pointing." },
+              { tag: "HOA", tagColor: gold, title: "$11,000 that didn\u2019t have to be spent.", situation: "An HOA water pump failed and cost $11,000 to replace. The board later discovered the same pump had been replaced two or three years earlier \u2014 another $11,000. That\u2019s $22,000 total on the same pump.", helped: "This happened before ConvoRally. The board struggled to find records of the original work. Documentation was incomplete and scattered. Nobody could confirm warranty terms.", outcome: "With complete records, the second replacement could have been a warranty claim. The board member said this was exactly the kind of problem ConvoRally would have prevented." },
+            ].map((story, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div style={{ background: bg, border: `1px solid ${border}`, borderRadius: 14, padding: "28px 24px", height: "100%", display: "flex", flexDirection: "column" }}>
+                  <span style={{ display: "inline-block", fontSize: 11, fontWeight: 600, color: story.tagColor, background: `${story.tagColor}10`, padding: "3px 10px", borderRadius: 20, marginBottom: 14, alignSelf: "flex-start" }}>{story.tag}</span>
+                  <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 19, fontWeight: 400, color: ink, marginBottom: 12, lineHeight: 1.3 }}>{story.title}</h3>
+                  <p style={{ fontSize: 13, color: mid, lineHeight: 1.6, marginBottom: 10 }}><strong style={{ color: ink, fontWeight: 600 }}>What happened:</strong> {story.situation}</p>
+                  <p style={{ fontSize: 13, color: mid, lineHeight: 1.6, marginBottom: 10 }}><strong style={{ color: ink, fontWeight: 600 }}>How ConvoRally helped:</strong> {story.helped}</p>
+                  <p style={{ fontSize: 13, color: ink, lineHeight: 1.6, fontWeight: 500, marginTop: "auto" }}>{story.outcome}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FOUNDER */}
       <section style={{ padding: "70px 24px", background: "#ECEAE5" }}>
         <div style={{ maxWidth: 620, margin: "0 auto" }}>
@@ -302,7 +334,8 @@ export default function ConvoRallyGray() {
             { l: "How It Works", h: "/how-it-works" }, { l: "Construction & Trades", h: "/remodeling" },
             { l: "Property Mgmt", h: "/property-management" }, { l: "HOA", h: "/hoa" },
             { l: "Building Forensics", h: "/building-forensics" }, { l: "Disaster Recovery", h: "/disaster-recovery" },
-            { l: "Why ConvoRally", h: "/why" }, { l: "Book a Demo", h: "/demo" },
+            { l: "Why ConvoRally", h: "/why" }, { l: "Community", h: "/community" },
+            { l: "Book a Demo", h: "/demo" },
           ].map((x) => (
             <a key={x.l} href={x.h} style={{ fontSize: 13, color: soft, textDecoration: "none" }}>{x.l}</a>
           ))}
