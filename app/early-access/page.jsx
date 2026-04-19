@@ -11,7 +11,11 @@ export default function EarlyAccessPage(){
   const[submitted,setSubmitted]=useState(false);
   useEffect(()=>{const l=document.createElement("link");l.href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap";l.rel="stylesheet";document.head.appendChild(l)},[]);
   const update=(f)=>(e)=>setForm({...form,[f]:e.target.value});
-  const go=()=>{if(form.email.includes("@")&&form.name.trim())setSubmitted(true)};
+  const go=async()=>{
+    if(!form.email.includes("@")||!form.name.trim())return;
+    try{await fetch("https://formspree.io/f/xeeplzoa",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...form,_form:"early-access"})});}catch(e){}
+    setSubmitted(true);
+  };
   const inputStyle={padding:"14px 16px",borderRadius:10,border:`1px solid ${bdr}`,fontSize:15,fontFamily:"'DM Sans', sans-serif",outline:"none",width:"100%",background:cardBg};
 
   return(

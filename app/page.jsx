@@ -80,6 +80,33 @@ export default function ConvoRallyHome(){
         </div>
       </section>
 
+      {/* 4b: CONNECTS HOW YOU WORK */}
+      <section style={{padding:"80px 24px",background:"#ECEAE5"}}>
+        <div style={{maxWidth:800,margin:"0 auto"}}>
+          <FadeIn><div style={{textAlign:"center",marginBottom:48}}>
+            <h2 style={{fontFamily:"'Instrument Serif', Georgia, serif",fontSize:"clamp(28px, 4vw, 42px)",fontWeight:400,lineHeight:1.25}}>ConvoRally doesn{"'"}t replace how you work.</h2>
+            <p style={{fontFamily:"'Instrument Serif', Georgia, serif",fontSize:"clamp(22px, 3vw, 32px)",fontStyle:"italic",color:teal,marginTop:8}}>It connects it.</p>
+            <p style={{fontSize:16,color:mid,maxWidth:480,margin:"16px auto 0",lineHeight:1.65}}>Most systems force people to change how they work. So they don{"'"}t use them. ConvoRally works with the tools and habits you already have.</p>
+          </div></FadeIn>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit, minmax(220px, 1fr))",gap:24,marginBottom:44}}>
+            {[
+              {icon:"\u{1F4E7}",title:"Reply by email",desc:"Respond to project updates right from your inbox. No login required."},
+              {icon:"\u{1F4F1}",title:"Get text notifications",desc:"Important updates reach you where you already are — your phone."},
+              {icon:"\u{1F517}",title:"Click and jump in",desc:"One tap from any notification takes you straight to the conversation."},
+            ].map((item,i)=>(
+              <FadeIn key={i} delay={i*0.1}><div style={{background:"#FFFFFF",border:`1px solid ${border}`,borderRadius:14,padding:"28px 24px",textAlign:"center",boxShadow:"0 1px 4px rgba(0,0,0,0.04)"}}><div style={{fontSize:28,marginBottom:12}}>{item.icon}</div><h3 style={{fontFamily:"'Instrument Serif', Georgia, serif",fontSize:19,fontWeight:400,color:ink,marginBottom:6}}>{item.title}</h3><p style={{fontSize:14,color:mid,lineHeight:1.6}}>{item.desc}</p></div></FadeIn>
+            ))}
+          </div>
+          <FadeIn delay={0.3}><div style={{textAlign:"center"}}>
+            <div style={{display:"inline-flex",flexDirection:"column",gap:12,background:"#FFFFFF",border:`1px solid ${border}`,borderRadius:14,padding:"28px 32px",boxShadow:"0 1px 4px rgba(0,0,0,0.04)"}}>
+              <p style={{fontFamily:"'Instrument Serif', Georgia, serif",fontSize:20,color:ink,lineHeight:1.5}}>Click a file {"\u2192"} see the conversation.</p>
+              <p style={{fontFamily:"'Instrument Serif', Georgia, serif",fontSize:20,color:ink,lineHeight:1.5}}>See the conversation {"\u2192"} understand the decision.</p>
+              <p style={{fontSize:14,color:teal,fontWeight:600,marginTop:4}}>Nothing loses context.</p>
+            </div>
+          </div></FadeIn>
+        </div>
+      </section>
+
       {/* 5: WHO IT'S FOR */}
       <section id="industries" style={{padding:"80px 24px"}}>
         <div style={{maxWidth:980,margin:"0 auto"}}>

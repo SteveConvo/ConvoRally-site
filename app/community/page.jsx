@@ -77,8 +77,9 @@ export default function CommunityPage() {
     setStep("voting");
   }
 
-  function submitVote() {
+  async function submitVote() {
     if (!email.includes("@")) return;
+    try{await fetch("https://formspree.io/f/xeeplzoa",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,industry,votedFor,_form:"shirt-vote"})});}catch(e){}
     const newVotes = { ...votes, [votedFor]: (votes[votedFor] || 0) + 1 };
     setVotes(newVotes);
     saveVotes(newVotes);
@@ -303,8 +304,8 @@ export default function CommunityPage() {
           ) : (
             <div style={{ maxWidth: 440, margin: "0 auto" }}>
               <div style={{ display: "flex", gap: 8, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 10, padding: 5 }}>
-                <input type="email" placeholder="you@company.com" value={foundingEmail} onChange={(e) => setFoundingEmail(e.target.value)} onKeyDown={(e) => e.key === "Enter" && foundingEmail.includes("@") && setFoundingSubmitted(true)} style={{ flex: 1, background: "transparent", border: "none", outline: "none", color: "#fff", fontSize: 15, padding: "10px 12px", fontFamily: "'DM Sans', sans-serif" }} />
-                <button onClick={() => foundingEmail.includes("@") && setFoundingSubmitted(true)} style={{ background: "#fff", color: navy, border: "none", borderRadius: 7, padding: "11px 22px", fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans', sans-serif", whiteSpace: "nowrap" }}>Join the Founding 100</button>
+                <input type="email" placeholder="you@company.com" value={foundingEmail} onChange={(e) => setFoundingEmail(e.target.value)} onKeyDown={(e) => e.key === "Enter" && async()=>{if(!foundingEmail.includes("@"))return;try{await fetch("https://formspree.io/f/xeeplzoa",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:foundingEmail,_form:"founding-100"})});}catch(e){}setFoundingSubmitted(true)})()} style={{ flex: 1, background: "transparent", border: "none", outline: "none", color: "#fff", fontSize: 15, padding: "10px 12px", fontFamily: "'DM Sans', sans-serif" }} />
+                <button onClick={() => async()=>{if(!foundingEmail.includes("@"))return;try{await fetch("https://formspree.io/f/xeeplzoa",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:foundingEmail,_form:"founding-100"})});}catch(e){}setFoundingSubmitted(true)})()} style={{ background: "#fff", color: navy, border: "none", borderRadius: 7, padding: "11px 22px", fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans', sans-serif", whiteSpace: "nowrap" }}>Join the Founding 100</button>
               </div>
             </div>
           )}
@@ -332,7 +333,7 @@ export default function CommunityPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <input type="email" placeholder="Your email" value={ideaEmail} onChange={(e) => setIdeaEmail(e.target.value)} style={{ padding: "12px 14px", borderRadius: 8, border: `1px solid ${bdr}`, fontSize: 15, fontFamily: "'DM Sans', sans-serif", outline: "none" }} />
               <textarea placeholder="Your shirt idea..." value={idea} onChange={(e) => setIdea(e.target.value)} rows={3} style={{ padding: "12px 14px", borderRadius: 8, border: `1px solid ${bdr}`, fontSize: 15, fontFamily: "'DM Sans', sans-serif", outline: "none", resize: "vertical" }} />
-              <button onClick={() => { if (ideaEmail.includes("@") && idea.trim()) setIdeaSubmitted(true); }} style={{
+              <button onClick={async()=>{if(!ideaEmail.includes("@")||!idea.trim())return;try{await fetch("https://formspree.io/f/xeeplzoa",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:ideaEmail,idea,_form:"shirt-idea"})});}catch(e){}setIdeaSubmitted(true);}} style={{
                 background: navy, color: "#fff", border: "none", borderRadius: 10,
                 padding: "13px 0", fontSize: 15, fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans', sans-serif",
               }}>Submit Your Idea</button>

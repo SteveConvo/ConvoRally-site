@@ -89,6 +89,37 @@ export default function HowItWorksPage() {
         </section>
       ))}
 
+      {/* WORKS WITH YOUR HABITS */}
+      <section style={{ padding: "60px 24px", background: "#ECEAE5" }}>
+        <div style={{ maxWidth: 640, margin: "0 auto" }}>
+          <FadeIn>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 400, lineHeight: 1.3, marginBottom: 14 }}>
+              ConvoRally doesn{"'"}t replace how you work. It connects it.
+            </h2>
+            <p style={{ fontSize: 17, color: mid, lineHeight: 1.75, marginBottom: 28 }}>
+              Most systems force people to change how they work. So they don{"'"}t use them. ConvoRally works with the tools and habits you already have.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {[
+                { icon: "\u{1F4E7}", text: "Reply by email — respond to project updates right from your inbox." },
+                { icon: "\u{1F4F1}", text: "Get text notifications — important updates reach you where you already are." },
+                { icon: "\u{1F517}", text: "Click and jump in — one tap from any notification takes you straight to the conversation." },
+              ].map((item, i) => (
+                <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                  <span style={{ fontSize: 22, minWidth: 28 }}>{item.icon}</span>
+                  <p style={{ fontSize: 16, color: ink, lineHeight: 1.6 }}>{item.text}</p>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: 28, padding: "20px 24px", background: "#FFFFFF", border: "1px solid #E2DFDA", borderRadius: 12 }}>
+              <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 18, color: ink, lineHeight: 1.5, marginBottom: 6 }}>Click a file {"\u2192"} see the conversation.</p>
+              <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 18, color: ink, lineHeight: 1.5, marginBottom: 6 }}>See the conversation {"\u2192"} understand the decision.</p>
+              <p style={{ fontSize: 14, color: "#0EA5B7", fontWeight: 600 }}>Nothing loses context.</p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* THE RESULT */}
       <section style={{ padding: "60px 24px", maxWidth: 640, margin: "0 auto" }}>
         <FadeIn>

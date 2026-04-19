@@ -16,7 +16,17 @@ export default function DemoPage() {
   }, []);
 
   const update = (field) => (e) => setForm({ ...form, [field]: e.target.value });
-  const go = () => { if (form.email.includes("@") && form.name.trim()) setSubmitted(true); };
+  const go = async () => {
+    if (!form.email.includes("@") || !form.name.trim()) return;
+    try {
+      await fetch("https://formspree.io/f/xeeplzoa", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, _form: "demo" }),
+      });
+    } catch (e) {}
+    setSubmitted(true);
+  };
 
   const inputStyle = { padding: "14px 16px", borderRadius: 10, border: `1px solid ${bdr}`, fontSize: 15, fontFamily: "'DM Sans', sans-serif", outline: "none", width: "100%", background: cardBg };
 
