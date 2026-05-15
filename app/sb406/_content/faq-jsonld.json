@@ -1,0 +1,134 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Georgia SB 406?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Georgia SB 406 — formally the Georgia Property Owners' Bill of Rights Act — is the most comprehensive HOA oversight law in state history. It was signed by Governor Brian Kemp on May 12, 2026 after passing the Senate 51–0 and the House 155–10. The law requires homeowners associations, property owners' associations, and condominium associations to register with the Georgia Secretary of State, retain records for at least ten years, follow detailed notice procedures before fines and foreclosures, apply homeowner payments to assessments before fines, and submit to a state complaint and review process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does Georgia SB 406 take effect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most of SB 406 takes effect on January 1, 2027. The single exception is Section 7, which governs attorney's fees, and which takes effect July 1, 2026 and applies to actions filed on or after that date. HOA boards and property managers in Georgia have through the end of 2026 to put records, notice procedures, registration, and a defensible audit trail in place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who does Georgia SB 406 apply to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SB 406 applies to all Georgia community associations — homeowners associations (HOAs), property owners' associations (POAs), and condominium associations. It effectively ends the historical distinction between HOAs and POAs by extending equivalent owner-protection rules to both. Self-managed neighborhoods and professionally managed communities are both covered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my HOA have to register with the Georgia Secretary of State?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, unless your association is willing to give up its enforcement powers. Under SB 406, every Georgia HOA must register annually with the Secretary of State and file governing documents and financial information. The current published fee is $100 per year. An association that does not register becomes a 'nonregistered owners' association' and cannot collect fines, accelerate assessments, place liens, or initiate foreclosure proceedings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if my HOA does not register under SB 406?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non-registered associations keep their corporate existence but lose the legal levers boards rely on day to day. They cannot impose or collect fines, accelerate assessments, record liens, or pursue foreclosure. They can still collect regular assessments as ordinary contract debts, but the enforcement mechanics that give an HOA leverage are gone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the new foreclosure threshold under SB 406?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SB 406 doubles the minimum delinquency required to initiate foreclosure from $2,000 to $4,000. Critically, only unpaid assessments count toward that $4,000 threshold — fines, late fees, and attorney's fees no longer count. The bill also lengthens the foreclosure notice period to 90 days and requires the notice to state that paying within the window eliminates the right to foreclose."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long must HOAs keep records under SB 406?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Registered associations must retain records for at least ten years. The retention requirement explicitly includes electronic records and covers governing documents, financial records, assessments, fines and fees, liens, foreclosures, board votes, and homeowner notices. These records are subject to reasonable examination by the Secretary of State when deemed in the public interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What notice does an HOA have to give before issuing a fine under SB 406?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Before any enforcement action, the association must provide a written notice that specifically cites the provision of the governing documents the homeowner allegedly violated and gives a defined cure period during which no fines accrue. Vague 'rule violation' letters are no longer enough — the citation has to be specific and the cure window has to be on the record."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How must HOAs apply homeowner payments under SB 406?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Payments from owners must be applied to regular assessments first, before being applied to fines, fees, or other charges. This prevents the common practice of using fine payments to keep an account technically delinquent and is one of the cleanest paper-trail requirements in the law — your ledger has to show, for every payment, that dues were retired first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the State Board for Review of Complaints?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SB 406 creates a new state-level body — the State Board for Review of Complaints Regarding Property Owners' Associations — that reviews complaints filed against HOAs. Owners can file complaints with the Secretary of State and request hearings. The Board and the Secretary of State have the power to investigate, hold hearings, and issue binding outcomes, including the authority to suspend or revoke an association's registration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What changes about attorney's fees under SB 406 Section 7?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Section 7 — the attorney's fees provision — takes effect July 1, 2026, six months ahead of the rest of the law. Before an association can collect attorney's fees from a homeowner, it must deliver an initial written notice identifying the outstanding fines or delinquent fees, give the homeowner 30 days to pay, and provide an itemized list of attorney's fees claimed. A judge must independently review the fees for reasonableness and enter an order before they can be awarded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does SB 406 require for board elections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Registered associations must hold annual board elections with formal procedures for contesting results, electronic ballot record-keeping, and filing of outcomes with the state. The election record — candidates, ballots cast, results — is part of the records the Secretary of State can examine and that you must retain for ten years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can ConvoRally help our HOA prepare for SB 406?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ConvoRally captures every email, text, vendor message, board vote, notice, and warranty in one searchable record that survives board turnover. For SB 406 specifically, ConvoRally produces the evidence the law demands: written notices with the specific governing-document citation and the cure period attached, ledger entries that show payments applied to assessments first, timestamped board votes you can't quietly rewrite, ten-year retention on by default, and a one-click audit pack you can hand to the Secretary of State or your attorney."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ConvoRally satisfy SB 406's 10-year record retention requirement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every message, file, decision, and approval in ConvoRally is retained as an electronic record with timestamps and chain-of-custody metadata. Records do not leave with the board members who created them, and the retention window is configurable to meet or exceed the ten-year requirement in SB 406. When the Secretary of State asks for the file, you can hand them a clean, dated record instead of a hunt through inboxes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can ConvoRally produce evidence for a Secretary of State hearing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ConvoRally lets you assemble an audit pack in one place — the original notice, the citation, the cure-period clock, vendor and homeowner communications, board votes, and the ledger. Each item is timestamped and linked to the work it relates to, so the package you produce reads like a clean case file rather than a binder of screenshots."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about self-managed HOAs — can we still comply with SB 406?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but the compliance burden falls more heavily on self-managed boards because there is no management company maintaining the back office. ConvoRally is designed for both: a self-managed HOA gets a system of record without hiring a full management company, while a managed community gets a single canonical record across the board, the manager, and vendors."
+      }
+    }
+  ]
+}
