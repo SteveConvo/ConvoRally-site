@@ -1,0 +1,913 @@
+
+<!-- ============================ REUSABLE DEFS ============================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow"   viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check"   viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-doc"     viewBox="0 0 16 16"><path d="M4 2h6l3 3v9a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10 2v3h3" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-chat"    viewBox="0 0 16 16"><path d="M2.5 3.5h11v8h-7l-2.5 2v-2H2.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="10.5" cy="4.5" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-ledger"  viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="11" height="11" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2.5 6h11M6 6v7.5M9.5 8h3M9.5 10.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield"  viewBox="0 0 16 16"><path d="M8 1.5l5 2v4.5c0 3-2 5.5-5 6.5-3-1-5-3.5-5-6.5V3.5l5-2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 8l2 2 3-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock"   viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 4v4l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-stamp"   viewBox="0 0 16 16"><path d="M5 2h6l-1 4h2v3H4V6h2L5 2zM3 11h10v3H3z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+    <symbol id="i-folder"  viewBox="0 0 16 16"><path d="M2 5h4l1.5 1.5H14v7a1 1 0 01-1 1H3a1 1 0 01-1-1V5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flag"    viewBox="0 0 16 16"><path d="M3.5 1.5v13M3.5 2.5h9l-2 3 2 3h-9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-cite"    viewBox="0 0 16 16"><path d="M5 4l-2 4 2 4M11 4l2 4-2 4M9.5 3.5l-3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-vote"    viewBox="0 0 16 16"><rect x="2.5" y="3" width="11" height="10" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============================ NAV (matches www.convorally.com exactly) ============================ -->
+<nav class="site-nav" aria-label="Primary">
+  <div class="wrap nav-inner">
+    <a class="brand" href="https://www.convorally.com/" aria-label="ConvoRally home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>ConvoRally</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://www.convorally.com/how-it-works">How It Works</a>
+      <a href="https://www.convorally.com/#industries">Use Cases</a>
+      <a href="https://www.convorally.com/why">Why ConvoRally</a>
+      <a class="btn-demo" href="https://www.convorally.com/demo">Book a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow"><span class="dot"></span>Georgia HOAs &middot; SB 406 takes effect Jan 1, 2027</span>
+        <h1>
+          <span class="hl-line">Be ready for the</span>
+          <span class="hl-line"><span class="accent">Property Owners' Bill of Rights.</span></span>
+        </h1>
+        <p class="hero-sub">
+          SB 406 changes the rules on January 1, 2027. Every <span class="rotator static"><span class="word">notice</span></span> your HOA sends will need a citation, a cure period, and a record that survives ten years. ConvoRally produces the receipt.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://www.convorally.com/demo">See how ConvoRally works <svg class="arrow" width="14" height="14"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-secondary" href="#faq">Read the FAQ</a>
+        </div>
+        <div class="hero-foot">
+          <span class="founders-badge"><span style="width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--cr-yellow),var(--cr-red));"></span> Became law <strong>May 12, 2026</strong> · Most provisions live <strong>Jan 1, 2027</strong></span>
+        </div>
+      </div>
+
+      <!-- ============== HERO COLLAGE — compliance receipt ============== -->
+      <div class="hero-collage" aria-hidden="true">
+        <div class="stage"></div>
+
+        <!-- floating context: homeowner -->
+        <div class="float-msg float">
+          <div class="name">
+            <span class="av s e">HM</span> Helen Marshall
+            <span class="chip ink" style="font-size:9px;padding:1px 6px;">Homeowner · Lot 14</span>
+          </div>
+          <div class="body">"I never got a notice telling me which rule I was breaking."</div>
+        </div>
+
+        <!-- centerpiece: SB 406 compliance notice -->
+        <div class="center">
+          <div class="dc-head">
+            <div>
+              <div class="lbl">SB 406 Notice · NTC-0214</div>
+              <h5>Written violation notice — on the record</h5>
+            </div>
+            <span class="chip green"><span class="pin-dot"></span>Compliant</span>
+          </div>
+          <div class="dc-body">
+            <div class="dc-kv">
+              <div class="k">Owner</div><div class="v">Helen Marshall &middot; Lot 14</div>
+              <div class="k">Provision</div><div class="v" style="font-family:var(--mono);font-size:12px;">CC&amp;R §4.3(a) — fence height</div>
+              <div class="k">Cure period</div><div class="v" style="color:var(--green);font-weight:600;">30 days &middot; no fines accrue</div>
+              <div class="k">Delivered</div><div class="v" style="font-family:var(--mono);font-size:12px;">May 14, 2026 &middot; 10:24 AM ET</div>
+            </div>
+
+            <div class="dc-outcome">
+              <div class="big">10y</div>
+              <div>
+                <div style="color:var(--green);font-weight:600;font-size:13px;">retained automatically</div>
+                <div class="lbl">SecState audit-ready &middot; electronic record</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- floating linked file -->
+        <div class="float-file float">
+          <div class="pdf">PDF</div>
+          <div>
+            <div class="k">CC&amp;R_2018_v3.pdf — §4.3(a)</div>
+            <div class="meta">Linked &middot; provision cited &middot; page 18</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ OUTCOME BAR ============================ -->
+<section class="outcome-bar" aria-label="SB 406 facts">
+  <div class="wrap">
+    <div class="row">
+      <div class="item">
+        <span class="ico"><svg width="18" height="18"><use href="#i-clock"/></svg></span>
+        <div><div class="v">Jan 1, 2027</div><div class="lbl">most provisions take effect</div></div>
+      </div>
+      <div class="item">
+        <span class="ico"><svg width="18" height="18"><use href="#i-shield"/></svg></span>
+        <div><div class="v">$4,000 floor</div><div class="lbl">new foreclosure threshold</div></div>
+      </div>
+      <div class="item">
+        <span class="ico"><svg width="18" height="18"><use href="#i-folder"/></svg></span>
+        <div><div class="v">10-year retention</div><div class="lbl">records — electronic counted</div></div>
+      </div>
+      <div class="item">
+        <span class="ico"><svg width="18" height="18"><use href="#i-stamp"/></svg></span>
+        <div><div class="v">SecState oversight</div><div class="lbl">registration · hearings · revocation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 1.0 — WHAT'S CHANGING ============================ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">
+        1.0 <span class="v">/ What's coming</span>
+        <span class="label">A new floor for HOA paperwork</span>
+      </div>
+      <div>
+        <h2>The Property Owners' Bill of Rights raises <em>the evidence bar.</em></h2>
+        <p class="lede">
+          Georgia SB 406 was signed into law on May 12, 2026. From January 1, 2027, every Georgia HOA, POA, and condo association has to operate on the record — register with the Secretary of State, retain records ten years, cite the rule before a fine, and prove it if a homeowner files a complaint. The boards that were already organized will barely notice. The ones running off email threads and a binder in someone's garage have a hard year ahead.
+        </p>
+      </div>
+    </div>
+
+    <div class="risk-grid">
+      <div class="risk">
+        <span class="badge"><svg width="11" height="11"><use href="#i-flag"/></svg> Risk #1</span>
+        <h3>Lose enforcement powers</h3>
+        <p>An association that fails to register with the Secretary of State becomes a "nonregistered owners' association" and cannot collect fines, accelerate assessments, place liens, or initiate foreclosure.</p>
+      </div>
+      <div class="risk">
+        <span class="badge"><svg width="11" height="11"><use href="#i-flag"/></svg> Risk #2</span>
+        <h3>A complaint becomes a hearing</h3>
+        <p>Homeowners can file complaints with the Secretary of State, who can investigate, hold hearings, and suspend or revoke the association's registration based on what the record shows.</p>
+      </div>
+      <div class="risk">
+        <span class="badge"><svg width="11" height="11"><use href="#i-flag"/></svg> Risk #3</span>
+        <h3>"I think it was in an email" stops working</h3>
+        <p>Records must be retained ten years, including electronic records, and must be ready for examination. Inboxes that leave with departing board members are no longer a defense.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 1.5 — TIMELINE ============================ -->
+<section class="section alt" id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">
+        1.5 <span class="v">/ Timeline</span>
+        <span class="label">Two effective dates, not one</span>
+      </div>
+      <div>
+        <h2>The clock is already running on <em>attorney's fees.</em></h2>
+        <p class="lede">
+          Most of SB 406 goes live on January 1, 2027. But Section 7 — the attorney's fees provision — flips on six months earlier, on July 1, 2026. If your association is in a fee dispute heading into the summer of 2026, the new rules are already in play.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-step done">
+        <span class="dot"></span>
+        <div class="when">Mar 31, 2026 &middot; <span class="badge">Passed</span></div>
+        <h4>Senate 51–0, House 155–10</h4>
+        <p>Bipartisan support both chambers. Strongest HOA oversight bill in Georgia history.</p>
+      </div>
+      <div class="tl-step done">
+        <span class="dot"></span>
+        <div class="when">May 12, 2026 &middot; <span class="badge">Signed</span></div>
+        <h4>Governor Kemp signs SB 406</h4>
+        <p>The Property Owners' Bill of Rights Act becomes Georgia law.</p>
+      </div>
+      <div class="tl-step live">
+        <span class="dot"></span>
+        <div class="when">Jul 1, 2026 &middot; <span class="badge" style="background:#92400E;">Live soon</span></div>
+        <h4>Section 7 — attorney's fees</h4>
+        <p>Pre-action notice, 30-day cure window, itemized fee statement, and judicial review of reasonableness required before fees can be awarded.</p>
+      </div>
+      <div class="tl-step">
+        <span class="dot"></span>
+        <div class="when">Jan 1, 2027 &middot; <span class="badge">Full law</span></div>
+        <h4>Everything else takes effect</h4>
+        <p>Registration with Secretary of State. 10-year records. $4,000 foreclosure floor. 90-day foreclosure notice. Complaint and hearing process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 2.0 — REAL SITUATION ============================ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">
+        2.0 <span class="v">/ Real situation</span>
+        <span class="label">When a complaint becomes a case</span>
+      </div>
+      <div>
+        <h2>How a vague fine letter <em>becomes a Secretary of State complaint.</em></h2>
+      </div>
+    </div>
+  </div>
+  <div class="wrap-tight">
+    <div class="story">
+      <div>
+        <div class="eyebrow">Georgia HOA &middot; 142 homes</div>
+        <p><strong>What happened.</strong> A homeowner gets a $200 fine letter that says "rule violation." She asks which rule. The board can't find the notice they sent, the inspection photo, or the part of the CC&amp;Rs they think she violated.</p>
+        <p><strong>What goes wrong under SB 406.</strong> Under the new rules, she files a complaint with the Secretary of State. The Board for Review opens a file and asks the association to produce the notice with the specific provision cited, the cure period, and the ten-year retention of related records.</p>
+        <p><strong>What the board has.</strong> A text thread. An email forwarded twice. A guess at where the photo is. No citation. No cure-period clock. No clean audit pack.</p>
+
+        <div class="savings">
+          <div class="amount">Registration at risk</div>
+          <div class="lbl">The Secretary of State can deny, suspend, or revoke the association's registration — and without registration the HOA cannot fine, lien, or foreclose.</div>
+        </div>
+      </div>
+
+      <div class="receipt">
+        <h4>What the record would have shown</h4>
+        <div class="sub">A single SB 406-ready file — notice, citation, cure clock, photo, ledger</div>
+        <div class="row"><span class="k">Owner</span><span class="v">Helen Marshall &middot; Lot 14</span></div>
+        <div class="row"><span class="k">Notice ID</span><span class="v">NTC-0214</span></div>
+        <div class="row"><span class="k">Provision cited</span><span class="v">CC&amp;R §4.3(a)</span></div>
+        <div class="row"><span class="k">Cure period</span><span class="v">30 days</span></div>
+        <div class="row"><span class="k">Delivered</span><span class="v">2026-05-14 10:24 AM</span></div>
+        <div class="row"><span class="k">Photo</span><span class="v">IMG_2204.jpg &middot; linked</span></div>
+        <div class="row"><span class="k">Ledger entry</span><span class="v">Assessments first, then fines</span></div>
+        <div class="row"><span class="k">Retained until</span><span class="v">2036-05-14</span></div>
+        <div class="row"><span class="k">Board vote</span><span class="v">3 of 3 &middot; on the record</span></div>
+        <div class="row"><span class="k">Status</span><span class="v" style="color:var(--green);">SecState ready</span></div>
+        <div class="seal"><svg width="12" height="12"><use href="#i-check"/></svg> SB 406 audit pack — one click</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3.0 — RECEIPTS YOU NEED ============================ -->
+<section class="section alt" id="receipts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">
+        3.0 <span class="v">/ The fix</span>
+        <span class="label">Six receipts your HOA will need</span>
+      </div>
+      <div>
+        <h2>Every requirement in SB 406 maps to <em>a receipt.</em></h2>
+        <p class="lede">
+          ConvoRally exists to produce those receipts automatically as you do the work — not as a separate compliance project after the fact.
+        </p>
+      </div>
+    </div>
+
+    <!-- FIG 3.1 — Notice with citation -->
+    <div class="fig-row">
+      <div class="fig-side">
+        <div class="fig-tag">FIG. <span class="num">3.1</span> &middot; Notice + citation</div>
+        <h3>Every violation notice cites the rule and starts the cure clock.</h3>
+        <p>SB 406 requires written notice that specifically identifies the violated provision and gives a cure period. ConvoRally produces it as the standard notice format — citation, clock, and delivery record on the same page.</p>
+        <ul class="micro-bullets">
+          <li><span class="k">Cites:</span> CC&amp;R provision, page, version</li>
+          <li><span class="k">Tracks:</span> cure period countdown</li>
+          <li><span class="k">Delivers:</span> email, certified mail, owner portal</li>
+        </ul>
+      </div>
+
+      <div class="viz-tile amber">
+        <div class="viz-focus notice-card">
+          <div class="nc-head">
+            <div>
+              <div class="lbl">SB 406 Notice &middot; NTC-0214</div>
+              <h5>Fence height — written violation notice</h5>
+            </div>
+            <span class="chip green"><span class="pin-dot"></span>Cited</span>
+          </div>
+          <div class="nc-body">
+            <div class="nc-kv">
+              <div class="k">Owner</div><div class="v">Helen Marshall · Lot 14</div>
+              <div class="k">Inspector</div><div class="v">Ravi Patel (Compliance Chair)</div>
+              <div class="k">Photo</div><div class="v">IMG_2204.jpg · linked</div>
+            </div>
+
+            <div class="nc-cite">
+              <span class="k">Specific provision cited</span>
+              CC&amp;R §4.3(a) — "No fence facing a public street shall exceed 48 inches in height."
+              <div style="font-family:var(--app-sans);font-size:11px;margin-top:6px;color:var(--app-muted);">Document: CC&amp;R_2018_v3.pdf · Page 18</div>
+            </div>
+
+            <div class="nc-cure">
+              <div class="big">30</div>
+              <div>
+                <div style="color:var(--green);font-weight:600;font-size:13px;">day cure period</div>
+                <div class="lbl">No fines accrue · clock ends Jun 13, 2026</div>
+              </div>
+            </div>
+
+            <div class="nc-trail">
+              <span>Email · delivered 10:24 AM</span>
+              <span>Certified mail · tracking 9405 …</span>
+              <span>Owner portal · viewed 11:02 AM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIG 3.2 — 10-year retention -->
+    <div class="fig-row flip">
+      <div class="fig-side">
+        <div class="fig-tag">FIG. <span class="num">3.2</span> &middot; 10-year record</div>
+        <h3>Records that don't leave when board members do.</h3>
+        <p>SB 406 requires associations to retain records for at least ten years, including electronic records. ConvoRally retains everything by default — and the Secretary of State can be handed a single export.</p>
+        <ul class="micro-bullets">
+          <li><span class="k">Includes:</span> notices, votes, ledgers, vendor comms, photos</li>
+          <li><span class="k">Indexed:</span> by owner, lot, project, year</li>
+          <li><span class="k">Searchable:</span> across the full ten-year window</li>
+        </ul>
+      </div>
+
+      <div class="viz-tile cream">
+        <div class="retention-drawer">
+          <h4><svg width="14" height="14" style="color:var(--app-sky);"><use href="#i-folder"/></svg> Records · 10-year retention · Lot 14</h4>
+          <div class="sub">Auto-retained until May 14, 2036 · Secretary of State export ready</div>
+
+          <div class="retention-row hot">
+            <svg class="ic" width="14" height="14"><use href="#i-doc"/></svg>
+            <div class="lbl">Notice NTC-0214 — fence height
+              <div class="meta">Provision cited · cure period · delivery proof</div>
+            </div>
+            <span class="stamp">2026-05-14</span>
+          </div>
+          <div class="retention-row">
+            <svg class="ic" width="14" height="14"><use href="#i-vote"/></svg>
+            <div class="lbl">Board vote — fine schedule update
+              <div class="meta">3 of 3 approvals · timestamped</div>
+            </div>
+            <span class="stamp">2026-04-09</span>
+          </div>
+          <div class="retention-row">
+            <svg class="ic" width="14" height="14"><use href="#i-ledger"/></svg>
+            <div class="lbl">Ledger entry — Q1 assessment payment
+              <div class="meta">Applied to assessments first · §44-3-232 ready</div>
+            </div>
+            <span class="stamp">2026-03-15</span>
+          </div>
+          <div class="retention-row">
+            <svg class="ic" width="14" height="14"><use href="#i-chat"/></svg>
+            <div class="lbl">Owner correspondence — irrigation complaint
+              <div class="meta">Resolution + photo · linked to issue</div>
+            </div>
+            <span class="stamp">2026-02-21</span>
+          </div>
+          <div class="retention-row">
+            <svg class="ic" width="14" height="14"><use href="#i-doc"/></svg>
+            <div class="lbl">Annual financials — 2025 audit
+              <div class="meta">Reserve study · insurance binder · attached</div>
+            </div>
+            <span class="stamp">2026-01-02</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIG 3.3 — Payment waterfall -->
+    <div class="fig-row">
+      <div class="fig-side">
+        <div class="fig-tag">FIG. <span class="num">3.3</span> &middot; Payment order</div>
+        <h3>Dues first. Fines second. <em>On the ledger, every time.</em></h3>
+        <p>SB 406 requires payments be applied to regular assessments before being applied to fines, fees, or accelerated charges. The ledger has to show the right order — for every payment, in every account.</p>
+        <ul class="micro-bullets">
+          <li><span class="k">Order:</span> assessments → late fees → fines → legal</li>
+          <li><span class="k">Audit:</span> ledger entry shows the math</li>
+          <li><span class="k">Effect:</span> $4,000 foreclosure floor stays clean</li>
+        </ul>
+      </div>
+
+      <div class="viz-tile green">
+        <div class="waterfall">
+          <h4>Payment from Lot 14 · $850 received</h4>
+          <div class="check">
+            <span>Received May 1, 2026 &middot; ACH</span>
+            <span class="amt">$850.00</span>
+          </div>
+
+          <div class="wf-step first">
+            <span class="num">1</span>
+            <div class="lbl">Regular assessment — Q2
+              <div class="meta">Required by SB 406 · applied first</div>
+            </div>
+            <span class="amt">−$650.00</span>
+          </div>
+          <div class="wf-step">
+            <span class="num">2</span>
+            <div class="lbl">Late fee — Q2
+              <div class="meta">Applied after assessment retired</div>
+            </div>
+            <span class="amt">−$25.00</span>
+          </div>
+          <div class="wf-step">
+            <span class="num">3</span>
+            <div class="lbl">Fine — CC&amp;R §4.3(a)
+              <div class="meta">Applied only after assessment + late fees</div>
+            </div>
+            <span class="amt">−$175.00</span>
+          </div>
+          <div class="wf-step faded">
+            <span class="num">4</span>
+            <div class="lbl">Attorney's fees
+              <div class="meta">Subject to SB 406 §7 — separate review</div>
+            </div>
+            <span class="amt">$0.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIG 3.4 — Board elections + ballots -->
+    <div class="fig-row flip">
+      <div class="fig-side">
+        <div class="fig-tag">FIG. <span class="num">3.4</span> &middot; Election record</div>
+        <h3>Annual elections, <em>with the ballot record the state can read.</em></h3>
+        <p>Registered associations must run annual board elections with formal procedures, electronic ballot record-keeping, and filing of outcomes. ConvoRally retains the ballot record alongside the rest of the ten-year file.</p>
+        <ul class="micro-bullets">
+          <li><span class="k">Retained:</span> candidates, votes, results, contestations</li>
+          <li><span class="k">Filed:</span> outcomes to Secretary of State</li>
+          <li><span class="k">Linked:</span> to the board's recorded votes</li>
+        </ul>
+      </div>
+
+      <div class="viz-tile sky">
+        <div class="ballot">
+          <h4><svg width="14" height="14" style="color:var(--app-sky);"><use href="#i-vote"/></svg> Annual board election &middot; 2026</h4>
+          <div class="sub">Electronic ballot · 94 of 142 lots cast · ratified Mar 18, 2026</div>
+
+          <div class="ballot-row winner">
+            <span class="name">Diane Reyes <span class="chip ink" style="font-size:9.5px;padding:1px 6px;">Treasurer</span></span>
+            <span class="v">73 votes</span>
+            <span class="v" style="color:var(--green);">Seated</span>
+          </div>
+          <div class="ballot-row winner">
+            <span class="name">Marcus Kim <span class="chip ink" style="font-size:9.5px;padding:1px 6px;">President</span></span>
+            <span class="v">71 votes</span>
+            <span class="v" style="color:var(--green);">Seated</span>
+          </div>
+          <div class="ballot-row">
+            <span class="name">Renee Nguyen <span class="chip ink" style="font-size:9.5px;padding:1px 6px;">Secretary</span></span>
+            <span class="v">68 votes</span>
+            <span class="v" style="color:var(--green);">Seated</span>
+          </div>
+          <div class="ballot-row">
+            <span class="name">Tom Albright</span>
+            <span class="v">21 votes</span>
+            <span class="v" style="color:var(--app-muted);">—</span>
+          </div>
+
+          <div class="ballot-footer">
+            <span>BALLOT-2026-001</span>
+            <span>Filed: Mar 19, 2026 · SecState</span>
+            <span>Retention: 2036-03-18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIG 3.5 — Complaint thread -->
+    <div class="fig-row">
+      <div class="fig-side">
+        <div class="fig-tag">FIG. <span class="num">3.5</span> &middot; Complaint thread</div>
+        <h3>Owner conversations <em>on the record from the start.</em></h3>
+        <p>Every email, text, and portal message lives in the same thread as the photo, the citation, and the board's response. When the Secretary of State asks what was said, you have it — in order, with timestamps.</p>
+      </div>
+
+      <div class="viz-tile rose">
+        <div class="thread-card">
+          <div class="ch-title">
+            <span class="h">#</span> notice-lot-14
+            <span class="h" style="font-weight:400;margin-left:6px;">in</span>
+            <span>Fence height — §4.3(a)</span>
+            <span class="pulse"></span>
+          </div>
+
+          <div class="msg">
+            <span class="av lg e">HM</span>
+            <div>
+              <div class="who"><span class="name">Helen Marshall</span><span class="when">May 14 · 11:02 AM</span></div>
+              <div class="body">I got a fine letter but it doesn't say which rule I broke. Can someone explain?</div>
+            </div>
+          </div>
+
+          <div class="msg me">
+            <span class="av lg c">RP</span>
+            <div>
+              <div class="who"><span class="name">Ravi Patel · Compliance</span><span class="when">11:14 AM</span></div>
+              <div class="body">Hi Helen — sending the formal notice now. It cites the specific provision and includes your 30-day cure window.</div>
+              <div class="inline-card cite">
+                <svg class="ic"><use href="#i-cite"/></svg>
+                <div>
+                  <div class="k">CC&amp;R §4.3(a) — fence height</div>
+                  <div class="meta">Cited in NTC-0214 · cure clock to Jun 13</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="msg">
+            <span class="av lg e">HM</span>
+            <div>
+              <div class="who"><span class="name">Helen Marshall</span><span class="when">11:31 AM</span></div>
+              <div class="body">OK — I'll have it down by next weekend. Will the fine stop?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIG 3.6 — Audit pack -->
+    <div class="fig-row flip">
+      <div class="fig-side">
+        <div class="fig-tag">FIG. <span class="num">3.6</span> &middot; Audit pack</div>
+        <h3>One-click pack for the <em>Secretary of State.</em></h3>
+        <p>When the Board for Review of Complaints opens a file, you don't go hunting through inboxes. The pack is already assembled — notice, citation, cure clock, ledger, board vote, retention proof.</p>
+        <ul class="micro-bullets">
+          <li><span class="k">Bundled:</span> all linked records, in order</li>
+          <li><span class="k">Signed:</span> integrity hash on each item</li>
+          <li><span class="k">Exportable:</span> single PDF or zipped archive</li>
+        </ul>
+      </div>
+
+      <div class="viz-tile slate">
+        <div class="audit-pack">
+          <h4><svg width="14" height="14" style="color:var(--app-sky);"><use href="#i-shield"/></svg> SB 406 Audit Pack &middot; Complaint #2027-0102-014</h4>
+          <div class="sub">Compiled May 14, 2026 · Helen Marshall · Lot 14 · 8 linked records</div>
+
+          <div class="audit-doc">
+            <svg class="ic" width="14" height="14"><use href="#i-doc"/></svg>
+            <span class="name">NTC-0214 — written violation notice (cited)</span>
+            <span class="meta">2026-05-14</span>
+          </div>
+          <div class="audit-doc">
+            <svg class="ic" width="14" height="14"><use href="#i-cite"/></svg>
+            <span class="name">CC&amp;R §4.3(a) — provision text + page</span>
+            <span class="meta">v2018-3</span>
+          </div>
+          <div class="audit-doc">
+            <svg class="ic" width="14" height="14"><use href="#i-clock"/></svg>
+            <span class="name">30-day cure clock — delivery + expiry stamps</span>
+            <span class="meta">→ 2026-06-13</span>
+          </div>
+          <div class="audit-doc">
+            <svg class="ic" width="14" height="14"><use href="#i-doc"/></svg>
+            <span class="name">IMG_2204.jpg — fence photo (inspector signed)</span>
+            <span class="meta">SHA-256 ✓</span>
+          </div>
+          <div class="audit-doc">
+            <svg class="ic" width="14" height="14"><use href="#i-vote"/></svg>
+            <span class="name">Board vote — fine schedule resolution</span>
+            <span class="meta">3 of 3</span>
+          </div>
+          <div class="audit-doc">
+            <svg class="ic" width="14" height="14"><use href="#i-ledger"/></svg>
+            <span class="name">Ledger — Q2 payment applied to assessments first</span>
+            <span class="meta">2026-05-01</span>
+          </div>
+          <div class="audit-doc">
+            <svg class="ic" width="14" height="14"><use href="#i-chat"/></svg>
+            <span class="name">Owner correspondence — #notice-lot-14 thread</span>
+            <span class="meta">12 msgs</span>
+          </div>
+          <div class="audit-doc">
+            <svg class="ic" width="14" height="14"><use href="#i-folder"/></svg>
+            <span class="name">Retention manifest — held until 2036-05-14</span>
+            <span class="meta">Signed</span>
+          </div>
+
+          <div class="audit-stamp">
+            <span class="pulse"></span>
+            <span>Ready to send to <strong>secstate.audit@georgia.gov</strong> · all records linked, hashed, retained.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ 4.0 — WITH / WITHOUT ============================ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">
+        4.0 <span class="v">/ Before &amp; after</span>
+        <span class="label">SB 406 with and without a record</span>
+      </div>
+      <div>
+        <h2>How the same situation plays out <em>before and after SB 406.</em></h2>
+      </div>
+    </div>
+
+    <div class="compare">
+
+      <div class="compare-row">
+        <div class="compare-side without">
+          <span class="tag">Without · the fine letter</span>
+          <h4>"Notice of rule violation — $200."</h4>
+          <p>One paragraph. No citation, no cure window, no photo, no record of when it was delivered. The homeowner asks which rule — nobody can find the answer in three different inboxes.</p>
+        </div>
+        <div class="compare-side with">
+          <span class="tag">With · SB 406 notice</span>
+          <h4>Citation, cure period, delivery proof.</h4>
+          <p>The notice cites CC&amp;R §4.3(a), starts a 30-day cure clock, links the inspection photo, and records delivery by email, certified mail, and portal — all on the same record.</p>
+        </div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-side without">
+          <span class="tag">Without · the complaint</span>
+          <h4>"They never sent me anything in writing."</h4>
+          <p>The homeowner files with the Secretary of State. The board scrambles to reconstruct what happened. The records they cobble together don't line up.</p>
+        </div>
+        <div class="compare-side with">
+          <span class="tag">With · SecState audit pack</span>
+          <h4>One-click pack: notice, citation, clock, vote, ledger.</h4>
+          <p>Everything linked, timestamped, and retained. The state gets a clean case file. The board's registration stays intact.</p>
+        </div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-side without">
+          <span class="tag">Without · payments</span>
+          <h4>"Her payment was applied to fines first."</h4>
+          <p>The homeowner stays delinquent on dues even though she paid. The $4,000 foreclosure threshold gets gamed. SB 406 makes that pattern actionable.</p>
+        </div>
+        <div class="compare-side with">
+          <span class="tag">With · payment waterfall</span>
+          <h4>Assessments first. Always. On the ledger.</h4>
+          <p>Every payment shows the order: regular assessments, then late fees, then fines, then attorney's fees. The state, the owner, and the board are looking at the same math.</p>
+        </div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-side without">
+          <span class="tag">Without · the next board</span>
+          <h4>"The previous treasurer had everything in his head."</h4>
+          <p>He moved to Florida. Records weren't kept. The new board can't prove the association was operating in compliance — and the ten-year window starts Jan 1, 2027.</p>
+        </div>
+        <div class="compare-side with">
+          <span class="tag">With · ten-year record</span>
+          <h4>The file survives turnover.</h4>
+          <p>Notices, votes, ledgers, comms, photos — indexed and held for ten years. New boards inherit the receipt, not the mystery.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="faq-section" id="faq">
+  <div class="wrap-tight">
+    <div class="faq-head">
+      <h2>Georgia SB 406 &middot; <em>Questions, answered.</em></h2>
+      <p class="lede">Plain-English answers about the Property Owners' Bill of Rights Act — what it changes, when it kicks in, and what your HOA needs to put on the record. Cited to the law where useful, written for boards, property managers, and homeowners.</p>
+    </div>
+
+    <!-- Table of contents -->
+    <div class="faq-toc" aria-label="FAQ index">
+      <h4>16 questions, plain answers</h4>
+      <a href="#q1"><span class="n">01</span> What is Georgia SB 406?</a>
+      <a href="#q2"><span class="n">02</span> When does SB 406 take effect?</a>
+      <a href="#q3"><span class="n">03</span> Who is covered — HOAs, POAs, condos?</a>
+      <a href="#q4"><span class="n">04</span> Does my HOA have to register?</a>
+      <a href="#q5"><span class="n">05</span> What happens if my HOA doesn't register?</a>
+      <a href="#q6"><span class="n">06</span> New foreclosure threshold under SB 406?</a>
+      <a href="#q7"><span class="n">07</span> How long must records be kept?</a>
+      <a href="#q8"><span class="n">08</span> Notice required before a fine?</a>
+      <a href="#q9"><span class="n">09</span> Payment application order?</a>
+      <a href="#q10"><span class="n">10</span> State Board for Review of Complaints?</a>
+      <a href="#q11"><span class="n">11</span> Section 7 attorney's fees?</a>
+      <a href="#q12"><span class="n">12</span> Board election requirements?</a>
+      <a href="#q13"><span class="n">13</span> How does ConvoRally help?</a>
+      <a href="#q14"><span class="n">14</span> 10-year retention with ConvoRally?</a>
+      <a href="#q15"><span class="n">15</span> Producing evidence for a hearing?</a>
+      <a href="#q16"><span class="n">16</span> Self-managed associations?</a>
+    </div>
+
+    <!-- ============================ THE BASICS ============================ -->
+    <div class="faq-group">
+      <div class="group-label">The basics</div>
+
+      <article class="faq-item" id="q1">
+        <h3>01 &middot; What is Georgia SB 406?</h3>
+        <p>Georgia SB 406 — formally the <strong>Georgia Property Owners' Bill of Rights Act</strong> — is the most comprehensive HOA oversight law in state history. It passed the Senate 51–0 and the House 155–10 on March 31, 2026, and was signed into law by Governor Brian Kemp on May 12, 2026.</p>
+        <p>The law requires HOAs, POAs, and condo associations to register with the Georgia Secretary of State, retain records for ten years (electronic records included), follow detailed notice procedures before assessing fines, apply homeowner payments to assessments before fines or fees, and submit to a state complaint-and-hearing process. It also raises the foreclosure threshold, lengthens foreclosure notice, and tightens the rules around attorney's fees.</p>
+        <span class="ref">O.C.G.A. Title 43 &middot; Title 44-3-232</span>
+      </article>
+
+      <article class="faq-item" id="q2">
+        <h3>02 &middot; When does Georgia SB 406 take effect?</h3>
+        <p>SB 406 has <strong>two effective dates</strong>:</p>
+        <ul>
+          <li><strong>Section 7</strong> (attorney's fees) takes effect <strong>July 1, 2026</strong> and applies to actions filed on or after that date.</li>
+          <li><strong>All other sections</strong> take effect <strong>January 1, 2027</strong>. That includes registration with the Secretary of State, the new foreclosure threshold, the 90-day foreclosure notice, the ten-year record retention, the payment-application order, and the State Board for Review of Complaints.</li>
+        </ul>
+        <p>Practically, Georgia HOA boards and property managers have through the end of 2026 to put records, notice procedures, registration filings, and an audit trail in place.</p>
+      </article>
+
+      <article class="faq-item" id="q3">
+        <h3>03 &middot; Who does Georgia SB 406 apply to — HOAs, POAs, or condos?</h3>
+        <p>All three. SB 406 applies to every Georgia community association: homeowners associations (HOAs), property owners' associations (POAs), and condominium associations. The law effectively ends the historical distinction between HOAs and POAs by extending parallel owner-protection rules to both. It applies whether the community is self-managed or professionally managed.</p>
+      </article>
+    </div>
+
+    <!-- ============================ REGISTRATION ============================ -->
+    <div class="faq-group">
+      <div class="group-label">Registration with the Secretary of State</div>
+
+      <article class="faq-item" id="q4">
+        <h3>04 &middot; Does my HOA have to register with the Georgia Secretary of State?</h3>
+        <p>If you want to retain enforcement authority, yes. SB 406 creates a mandatory registration system. Associations must file annual registration documents with the Georgia Secretary of State, including governing documents and financial information. The published fee is <strong>$100 per year</strong>, and registration must be renewed annually.</p>
+        <p>An association can choose not to register and operate as a "nonregistered owners' association." But that election comes with real limitations — see Question 5.</p>
+      </article>
+
+      <article class="faq-item" id="q5">
+        <h3>05 &middot; What happens if my HOA doesn't register under SB 406?</h3>
+        <p>A non-registered association keeps its corporate existence but loses its enforcement powers. Specifically, it <strong>cannot</strong>:</p>
+        <ul>
+          <li>Impose or collect fines</li>
+          <li>Accelerate assessments</li>
+          <li>Place or enforce liens against homeowners</li>
+          <li>Initiate foreclosure proceedings</li>
+        </ul>
+        <p>It can still collect regular assessments as ordinary contract debts, but the enforcement levers boards rely on day-to-day are gone. For nearly every functioning HOA in Georgia, registration is the only practical option.</p>
+      </article>
+
+      <article class="faq-item" id="q6">
+        <h3>06 &middot; What is the new foreclosure threshold under SB 406?</h3>
+        <p>SB 406 <strong>doubles the minimum delinquency required to initiate a foreclosure from $2,000 to $4,000</strong>. Two important nuances:</p>
+        <ul>
+          <li>Only <strong>unpaid assessments</strong> count toward the $4,000 threshold — fines, late fees, and attorney's fees no longer count.</li>
+          <li>The foreclosure notice period is lengthened to <strong>90 days</strong>, and the notice must state that paying within that window eliminates the right to foreclose.</li>
+        </ul>
+        <p>The combined effect is to slow the foreclosure process down and force associations to maintain a clean ledger showing which arrears are actual assessments and which are fines, fees, or attorney's costs.</p>
+      </article>
+    </div>
+
+    <!-- ============================ RECORDS & NOTICES ============================ -->
+    <div class="faq-group">
+      <div class="group-label">Records, notices, and payment order</div>
+
+      <article class="faq-item" id="q7">
+        <h3>07 &middot; How long must HOAs keep records under SB 406?</h3>
+        <p>Registered associations must retain records for <strong>at least ten years</strong>. The retention requirement explicitly includes electronic records. Covered records include governing documents, financial records, assessments, fines and fees, liens, foreclosures, board votes, and homeowner notices. Those records are subject to reasonable examination by the Secretary of State when deemed in the public interest or for protection of the public.</p>
+        <p>The practical implication is that you can't rely on a departing board member's inbox or a binder in someone's garage. The record needs to be electronic, indexed, and durable.</p>
+      </article>
+
+      <article class="faq-item" id="q8">
+        <h3>08 &middot; What notice does an HOA have to give before issuing a fine?</h3>
+        <p>Before any enforcement action, the association must provide a <strong>written notice that specifically cites the provision</strong> of the governing documents the homeowner allegedly violated, and the notice must give the homeowner a <strong>cure period</strong> during which no fines accrue.</p>
+        <p>A generic "rule violation" letter no longer satisfies the requirement. The letter has to identify the exact provision (for example, "CC&amp;R §4.3(a)"), and the cure clock has to be on the record. After the cure period expires without resolution, fines can begin accruing.</p>
+      </article>
+
+      <article class="faq-item" id="q9">
+        <h3>09 &middot; How must HOAs apply homeowner payments under SB 406?</h3>
+        <p>Payments from owners must be applied to <strong>regular assessments first</strong>, before fines, fees, or other charges. This prevents the common practice of applying payments to fines so the homeowner stays technically delinquent on dues — and it keeps fines and fees out of the $4,000 foreclosure threshold.</p>
+        <p>For every payment, in every account, the ledger has to show that the assessment was retired before any other charge. ConvoRally enforces the order as the default in the ledger view and stores the corresponding entry as part of the ten-year record.</p>
+      </article>
+
+      <article class="faq-item" id="q10">
+        <h3>10 &middot; What is the State Board for Review of Complaints?</h3>
+        <p>SB 406 creates a new body — the <strong>State Board for Review of Complaints Regarding Property Owners' Associations</strong> — that reviews homeowner complaints filed with the Georgia Secretary of State. Owners can file complaints; the Secretary of State and the Board can investigate, hold hearings, and reach binding outcomes.</p>
+        <p>The Secretary of State has the power to <strong>deny, suspend, or revoke an association's registration</strong>, and to limit an association's ability to impose fines, fees, liens, or foreclosures. The Board functions as the appeals layer above that authority.</p>
+      </article>
+    </div>
+
+    <!-- ============================ ATTORNEY'S FEES & ELECTIONS ============================ -->
+    <div class="faq-group">
+      <div class="group-label">Attorney's fees &amp; board elections</div>
+
+      <article class="faq-item" id="q11">
+        <h3>11 &middot; What changes about attorney's fees under SB 406 Section 7?</h3>
+        <p>Section 7 is the part of SB 406 that takes effect first — on <strong>July 1, 2026</strong>. Before an association can collect attorney's fees from a homeowner, it must:</p>
+        <ul>
+          <li>Deliver an <strong>initial written notice</strong> identifying the outstanding fines or delinquent fees.</li>
+          <li>Give the homeowner <strong>30 days to pay</strong>.</li>
+          <li>Provide an <strong>itemized list of attorney's fees</strong> claimed.</li>
+        </ul>
+        <p>A judge must then independently review the fees for reasonableness and enter an order before they can be awarded. There is a narrow emergency exception. Section 7 applies to actions filed on or after July 1, 2026.</p>
+        <span class="ref">SB 406 Section 7 &middot; effective 2026-07-01</span>
+      </article>
+
+      <article class="faq-item" id="q12">
+        <h3>12 &middot; What does SB 406 require for board elections?</h3>
+        <p>Registered associations must hold <strong>annual board elections</strong> with formal procedures for contesting results, <strong>electronic ballot record-keeping</strong>, and <strong>filing of outcomes with the state</strong>. The full election record — candidates, ballots cast, results, and any contested-result documentation — is part of the records the Secretary of State can examine and that the association must retain for ten years.</p>
+      </article>
+    </div>
+
+    <!-- ============================ HOW CONVORALLY HELPS ============================ -->
+    <div class="faq-group">
+      <div class="group-label">How ConvoRally helps</div>
+
+      <article class="faq-item" id="q13">
+        <h3>13 &middot; How can ConvoRally help our HOA prepare for SB 406?</h3>
+        <p>ConvoRally is a system of record built for HOA boards and property managers. For SB 406 specifically, it produces the evidence the law requires <strong>as a byproduct of running the community</strong>, not as a separate compliance project:</p>
+        <ul>
+          <li><strong>Written notices</strong> with the specific governing-document citation and a tracked cure period attached.</li>
+          <li><strong>Ledger entries</strong> that show payments applied to assessments first, then fees, then fines, then legal.</li>
+          <li><strong>Timestamped board votes</strong> linked to the matter being decided — and that can't be quietly rewritten later.</li>
+          <li><strong>Ten-year record retention</strong> on by default, with electronic records counted.</li>
+          <li><strong>Owner conversations</strong> — email, text, portal — captured in the same thread as the notice and the photo.</li>
+          <li><strong>One-click audit pack</strong> for the Secretary of State or your attorney.</li>
+        </ul>
+      </article>
+
+      <article class="faq-item" id="q14">
+        <h3>14 &middot; Does ConvoRally satisfy SB 406's 10-year record retention requirement?</h3>
+        <p>Yes. Every message, file, decision, and approval in ConvoRally is retained as an electronic record with timestamps and chain-of-custody metadata. Records do not leave when the board members who created them move on, and the retention window is configured to meet or exceed the ten-year minimum in SB 406. When the Secretary of State asks for the file, you hand them a clean, dated record rather than a hunt through inboxes.</p>
+      </article>
+
+      <article class="faq-item" id="q15">
+        <h3>15 &middot; Can ConvoRally produce evidence for a Secretary of State hearing?</h3>
+        <p>Yes. ConvoRally assembles an audit pack from the linked records — the original notice with its specific citation, the cure-period clock, owner and vendor correspondence, board votes, the ledger showing payment application order, and the retention manifest. Each item is timestamped and linked to the work it relates to, so the package you produce reads like a clean case file.</p>
+      </article>
+
+      <article class="faq-item" id="q16">
+        <h3>16 &middot; What about self-managed HOAs — can we still comply with SB 406?</h3>
+        <p>Yes. Self-managed boards actually carry the heaviest compliance burden because there is no management company maintaining the back office. ConvoRally is designed for both: a self-managed HOA gets a system of record without hiring a full management company, while a managed community gets a single canonical record across the board, the manager, and vendors.</p>
+        <p>If your community has a property manager, ConvoRally typically lives alongside the management platform — the manager continues to handle accounting, while ConvoRally captures the conversations, notices, decisions, and the audit trail behind them.</p>
+      </article>
+    </div>
+
+    <div style="text-align:center;margin-top:36px;font-size:14px;color:var(--muted);">
+      Still have a question about SB 406? <a href="https://www.convorally.com/demo" style="color:var(--cr-orange);font-weight:600;">Book a 15-minute walkthrough →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CLOSER ============================ -->
+<section class="closer">
+  <div class="wrap-tight">
+    <h2>Next time the Secretary of State asks for the file — <em>you'll have it.</em></h2>
+  </div>
+</section>
+
+<!-- ============================ DARK CTA ============================ -->
+<section class="cta-dark">
+  <div class="wrap-tight" style="position:relative;z-index:1;">
+    <h2>Be ready before <em>January 1, 2027.</em></h2>
+    <p>Bring a real notice your board sent recently. We'll show you what the same notice looks like once SB 406 is in effect — and what the audit pack behind it produces.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:28px;">
+      <a class="btn btn-primary" href="https://www.convorally.com/demo">See how ConvoRally works <svg class="arrow" width="14" height="14"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-secondary" href="https://www.convorally.com/early-access">Get Early Access</a>
+    </div>
+    <span class="founders-badge"><span style="width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--cr-yellow),var(--cr-red));"></span> First <strong>100 qualifying Georgia HOAs</strong> get Founding 100 status</span>
+  </div>
+</section>
+
+<!-- ============================ FOOTER (matches www.convorally.com exactly) ============================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-tagline">If it's not in ConvoRally, it didn't happen.</div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://www.convorally.com/how-it-works">How It Works</a>
+      <a href="https://www.convorally.com/remodeling">Contractors &amp; Remodelers</a>
+      <a href="https://www.convorally.com/hoa">HOAs &amp; Property Mgmt</a>
+      <a href="https://www.convorally.com/building-forensics">Building Forensics</a>
+      <a href="https://www.convorally.com/property-management">Property Management</a>
+      <a href="https://www.convorally.com/disaster-recovery">Disaster Recovery</a>
+      <a href="https://www.convorally.com/why">Why ConvoRally</a>
+      <a href="https://www.convorally.com/demo">Book a Demo</a>
+      <a href="https://www.convorally.com/early-access">Get Early Access</a>
+    </nav>
+
+    <div class="footer-bottom">
+      <a class="brand" href="https://www.convorally.com/">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>ConvoRally</span>
+      </a>
+      <span class="copyright">© 2026 ConvoRally</span>
+    </div>
+
+    <p class="footer-disclaimer">
+      This page summarizes Georgia SB 406 (Property Owners' Bill of Rights Act, 2026) based on publicly available bill text and analyses. It is provided for informational purposes only and is not legal advice. Confirm specific applicability with qualified Georgia counsel before relying on it for compliance decisions.
+    </p>
+  </div>
+</footer>
+
+<!-- Hero rotator intentionally disabled: the word "notice" renders statically. -->
+
